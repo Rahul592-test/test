@@ -1,0 +1,10 @@
+---
+- name: Update APT package cache
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update APT cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600  # Only update if the cache is older than 1 hour
